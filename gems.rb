@@ -7,4 +7,5 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
+  gem 'yard', require: false
 end
