@@ -23,4 +23,3 @@ jobs:
     - name: Check that code 100% documented
       run:
         yard stats --list-undoc
-        yardoc . | grep -q '100.00% documented'
