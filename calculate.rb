@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 DOC_BUILDER_PATH = 'documentbuilder'
-FILES_PATH = '/home/lobashov/RubymineProjects/OnlineDocuments/data/data_files/spreadsheet_formulas'
+FILES_PATH = "#{ENV['HOME']}/RubymineProjects/OnlineDocuments/data/data_files/spreadsheet_formulas"
 
 files = Dir["#{FILES_PATH}/*"].sort
 
