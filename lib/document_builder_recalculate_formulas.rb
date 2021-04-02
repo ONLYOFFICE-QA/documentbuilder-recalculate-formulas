@@ -37,7 +37,10 @@ module DocumentBuilderRecalculateFormulas
   # @return [Hash] list of known error
   def self.known_errors
     {
-      'DAYS_emb.xlsx': 'Could not calculate date related data'
+      'BESSELJ_emb.xlsx': 'http://bugzilla.onlyoffice.com/show_bug.cgi?id=35733',
+      'DAYS_emb.xlsx': 'Could not calculate date related data',
+      'RANDBETWEEN_emb.xlsx': 'Cannot check random data',
+      'RAND_emb.xlsx': 'Cannot check random data'
     }
   end
 
