@@ -2,7 +2,9 @@
 
 require_relative 'lib/document_builder_recalculate_formulas'
 
+# @return [String] docbuilder executable
 DOC_BUILDER_PATH = 'documentbuilder'
+# @return [String] default path for all formulas files
 FILES_PATH = "#{ENV['HOME']}/RubymineProjects/OnlineDocuments/data/data_files/spreadsheet_formulas"
 
 files = Dir["#{FILES_PATH}/*"].sort
