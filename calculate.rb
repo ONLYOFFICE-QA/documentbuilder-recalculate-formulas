@@ -8,14 +8,9 @@ FILES_PATH = "#{ENV['HOME']}/RubymineProjects/OnlineDocuments/data/data_files/sp
 files = Dir["#{FILES_PATH}/*"].sort
 
 files.each do |file|
-  script_content = "builder.OpenFile(\"#{file}\");\n"
-  script_content += "Api.RecalculateAllFormulas(function(obj){\n"
-  script_content += "console.log('error: [' + obj.oldValue + ', ' + obj.newValue + '] in ' + obj.sheet + ',' + obj.r + ',' + obj.c);\n"
-  script_content += "});\n"
-  script_content += 'builder.CloseFile();'
-
+  script = DocumentBuilderRecalculateFormulas.form_script(file)
   puts("Processing #{file}")
-  File.write('./test.docbuilder', script_content)
+  File.write('./test.docbuilder', script)
   result = `#{DOC_BUILDER_PATH} ./test.docbuilder`
   DocumentBuilderRecalculateFormulas.handle_result(file, result)
 end

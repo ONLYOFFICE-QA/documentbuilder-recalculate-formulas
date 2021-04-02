@@ -40,4 +40,16 @@ module DocumentBuilderRecalculateFormulas
       'DAYS_emb.xlsx': 'Could not calculate date related data'
     }
   end
+
+  # Form script for file
+  # @param [String] file name
+  # @return [String] script result
+  def self.form_script(file)
+    "builder.OpenFile(\"#{file}\");\n"\
+    "Api.RecalculateAllFormulas(function(obj){\n"\
+    "console.log('error: [' + obj.oldValue + ', ' + obj.newValue + '] "\
+    "in ' + obj.sheet + ',' + obj.r + ',' + obj.c);\n"\
+    "});\n"\
+    'builder.CloseFile();'
+  end
 end
