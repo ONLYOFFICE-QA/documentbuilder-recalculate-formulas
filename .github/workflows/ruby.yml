@@ -21,4 +21,6 @@ jobs:
     - name: Check source files using `rubocop`
       run: rubocop
     - name: Check that code 100% documented
-      run: yardoc . | grep -q '100.00% documented'
+      run:
+        yard stats --list-undoc
+        yardoc . | grep -q '100.00% documented'
