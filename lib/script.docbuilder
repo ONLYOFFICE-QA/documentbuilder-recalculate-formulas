@@ -1,0 +1,5 @@
+builder.OpenFile("$$FILE");
+Api.RecalculateAllFormulas(function(obj){
+console.log('error: [' + obj.oldValue + ', ' + obj.newValue + '] in ' + obj.sheet + ',' + obj.r + ',' + obj.c);
+});
+builder.CloseFile();

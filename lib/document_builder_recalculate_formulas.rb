@@ -45,11 +45,7 @@ module DocumentBuilderRecalculateFormulas
   # @param [String] file name
   # @return [String] script result
   def self.form_script(file)
-    "builder.OpenFile(\"#{file}\");\n"\
-    "Api.RecalculateAllFormulas(function(obj){\n"\
-    "console.log('error: [' + obj.oldValue + ', ' + obj.newValue + '] "\
-    "in ' + obj.sheet + ',' + obj.r + ',' + obj.c);\n"\
-    "});\n"\
-    'builder.CloseFile();'
+    script = File.read("#{Dir.pwd}/lib/script.docbuilder")
+    script.gsub('$$FILE', file)
   end
 end
