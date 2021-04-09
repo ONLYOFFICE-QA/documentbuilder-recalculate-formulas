@@ -60,5 +60,10 @@ module DocumentBuilderRecalculateFormulas
       script = File.read("#{Dir.pwd}/lib/script.docbuilder")
       script.gsub('$$FILE', file)
     end
+
+    # @return [String] report version
+    def report_version
+      "builder_v#{builder.version}_project_v#{`git rev-parse --short HEAD`}"
+    end
   end
 end

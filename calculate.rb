@@ -7,6 +7,7 @@ FILES_PATH = "#{ENV['HOME']}/RubymineProjects/OnlineDocuments/data/data_files/sp
 
 files = Dir["#{FILES_PATH}/*"].sort
 recalculator = DocumentBuilderRecalculateFormulas::Recalculator.new
+puts recalculator.report_version
 
 files.each do |file|
   script = recalculator.form_script(file)
