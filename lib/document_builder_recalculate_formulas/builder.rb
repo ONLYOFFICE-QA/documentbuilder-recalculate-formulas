@@ -9,7 +9,7 @@ module DocumentBuilderRecalculateFormulas
       @exe = exe
     end
 
-    # @return [Gem::Version] version of builder
+    # @return [Gem::Version, String] version of builder
     def version
       Gem::Version.new(cleanup_version)
     rescue StandardError => e
