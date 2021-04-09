@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'document_builder_recalculate_formulas/builder'
+
 # Main namespace for this project
 module DocumentBuilderRecalculateFormulas
   # Handle result string
