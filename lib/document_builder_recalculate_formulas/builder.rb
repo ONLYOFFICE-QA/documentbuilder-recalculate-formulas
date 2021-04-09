@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Main module of app
 module DocumentBuilderRecalculateFormulas
   # Class for interface for builder
   class Builder
