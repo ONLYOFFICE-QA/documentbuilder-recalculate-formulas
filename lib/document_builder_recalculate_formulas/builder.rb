@@ -16,6 +16,12 @@ module DocumentBuilderRecalculateFormulas
       'unknown'
     end
 
+    # Build script file
+    # @param [String] file path
+    def build_file(file)
+      `#{@exe} #{file}`
+    end
+
     private
 
     # @return [String] raw version string
@@ -31,5 +37,3 @@ module DocumentBuilderRecalculateFormulas
     end
   end
 end
-
-puts DocumentBuilderRecalculateFormulas::Builder.new.version
