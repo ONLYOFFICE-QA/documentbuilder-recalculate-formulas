@@ -48,8 +48,13 @@ module DocumentBuilderRecalculateFormulas
       {
         'BESSELJ_emb.xlsx': 'http://bugzilla.onlyoffice.com/show_bug.cgi?id=35733',
         'DAYS_emb.xlsx': 'Could not calculate date related data',
+        'LINEST_emb.xlsx': 'https://bugzilla.onlyoffice.com/show_bug.cgi?id=46246',
+        'INDEX_emb.xlsx': 'http://bugzilla.onlyoffice.com/show_bug.cgi?id=40974',
+        'NOW_emb.xlsx': 'Could not calculate date related data',
+        'RANDARRAY_emb.xlsx': 'Cannot check random data',
         'RANDBETWEEN_emb.xlsx': 'Cannot check random data',
-        'RAND_emb.xlsx': 'Cannot check random data'
+        'RAND_emb.xlsx': 'Cannot check random data',
+        'TODAY_emb.xlsx': 'Could not calculate date related data'
       }
     end
 
