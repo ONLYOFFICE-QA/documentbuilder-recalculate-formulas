@@ -42,12 +42,12 @@ module DocumentBuilderRecalculateFormulas
     def known_error_for_file(file)
       filename = File.basename(file)
 
-      known_errors[filename.to_sym]
+      known_errors[filename]
     end
 
     # @return [Hash] list of known error
     def known_errors
-      @known_errors ||= JSON.parse('./known_errors.json')
+      @known_errors ||= JSON.parse(File.read("#{Dir.pwd}/lib/document_builder_recalculate_formulas/known_errors.json"))
     end
 
     # Form script for file
