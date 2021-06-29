@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'json'
+
 module DocumentBuilderRecalculateFormulas
   # Class for performing recalculations
   class Recalculator
@@ -40,22 +42,12 @@ module DocumentBuilderRecalculateFormulas
     def known_error_for_file(file)
       filename = File.basename(file)
 
-      known_errors[filename.to_sym]
+      known_errors[filename]
     end
 
     # @return [Hash] list of known error
     def known_errors
-      {
-        'BESSELJ_emb.xlsx': 'http://bugzilla.onlyoffice.com/show_bug.cgi?id=35733',
-        'DAYS_emb.xlsx': 'Could not calculate date related data',
-        'LINEST_emb.xlsx': 'https://bugzilla.onlyoffice.com/show_bug.cgi?id=46246',
-        'INDEX_emb.xlsx': 'http://bugzilla.onlyoffice.com/show_bug.cgi?id=40974',
-        'NOW_emb.xlsx': 'Could not calculate date related data',
-        'RANDARRAY_emb.xlsx': 'Cannot check random data',
-        'RANDBETWEEN_emb.xlsx': 'Cannot check random data',
-        'RAND_emb.xlsx': 'Cannot check random data',
-        'TODAY_emb.xlsx': 'Could not calculate date related data'
-      }
+      @known_errors ||= JSON.parse(File.read("#{Dir.pwd}/lib/document_builder_recalculate_formulas/known_errors.json"))
     end
 
     # Form script for file
