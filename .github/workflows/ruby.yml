@@ -10,6 +10,8 @@ jobs:
       with:
         ruby-version: 3.0
     - uses: actions/setup-node@v1
+      with:
+        node-version: '16'    
     - name: Check markdown files using `markdownlint`
       run: |
         npm install -g markdownlint-cli
