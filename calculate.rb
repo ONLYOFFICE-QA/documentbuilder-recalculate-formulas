@@ -3,7 +3,7 @@
 require_relative 'lib/document_builder_recalculate_formulas'
 
 # @return [String] default path for all formulas files
-FILES_PATH = "#{Dir.home}/RubymineProjects/OnlineDocuments/data/data_files/spreadsheet_formulas"
+FILES_PATH = "#{Dir.home}/RubymineProjects/OnlineDocuments/data/data_files/spreadsheet_formulas".freeze
 
 files = Dir["#{FILES_PATH}/*"]
 recalculator = DocumentBuilderRecalculateFormulas::Recalculator.new
